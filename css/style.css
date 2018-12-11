@@ -298,8 +298,18 @@ img{
 
 .subscribe {
     min-width: 480px;
-    line-height: 60px;
     border: 2px solid #283a47;
+    transition: all .5s ease-in-out;
+}
+
+.subscribe.success {
+    border: 2px solid #36cd64;
+    background: rgba(54, 205, 100, .3);
+}
+
+.subscribe_form {
+    display: flex;
+    align-items: center;
 }
 
 .subscribe__field{
@@ -307,6 +317,7 @@ img{
     z-index: 1;
     display: inline-block;
     width: 75%;
+    height: 1rem;
 }
 
 
@@ -376,6 +387,7 @@ img{
 }
 
 .scrollanim_wrap{
+    line-height: 3.8rem;
    -webkit-transition: -webkit-transform 1s;
    transition: -webkit-transform 1s;
    -o-transition: transform 1s;
@@ -393,7 +405,7 @@ img{
 }
 
 .subscribe__field input:focus+label {
-    top: 12px;
+    top: -.5rem;
     color: #999;
     font-size: 9px;
 }

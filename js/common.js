@@ -241,3 +241,19 @@ $('img').each((i,val) => {
 });    
     
 });
+
+$('.subscribe_form').on('submit', e => {
+  e.preventDefault()
+  const inputs = $('.subscribe_form').serializeArray()
+  const [ { value: email } ] = inputs.filter(v => v.value.length > 0)
+  
+  $.post('/somethere', { email })
+  $('.subscribe__field input').val('')
+  $('.subscribe__field label').text('Success!').removeClass('hasData')
+  $('.subscribe').addClass('success')
+
+  setTimeout(() => {
+    $('.subscribe__field label').text('Enter your email')
+    $('.subscribe').removeClass('success')
+  }, 2000)
+})
